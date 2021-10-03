@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+<head>
+    @await Html.PartialAsync("MetatagsPartial")
+    @await Html.PartialAsync("CssPartial")
+</head>
+
+<body>
+    <div id="page-wrapper">
+        @await Html.PartialAsync("HeaderPartial")
+        <div id="main">
+            <div class="container">
+                <div class="row main-row">
+                        @RenderBody()
+                    </div>
+                </div>
+                    <div class="col-8 col-7-large col-12-medium">
+               @*@await Html.PartialAsync("HomePartial")*@
+                    </div>
+            </div>
+            @*@await Html.PartialAsync("WorkPartial")*@
+        </div>
+        @*@await Html.PartialAsync("PortfolioPartial")*@
+        @await Html.PartialAsync("ContactPartial")
+    </div>
+
+
+    <!-- Home -->
+    <!-- Work -->
+    <!-- Portfolio -->
+    <!-- Contact -->
+
+
+    @await Html.PartialAsync("ScriptsPartial")
+</body>
+</html>

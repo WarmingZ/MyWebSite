@@ -1,0 +1,14 @@
+﻿@model TextField
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+
+@*Метод Рав виводить все содєржиме в нашому випадку Text.
+     Метод рав не екранує і декодує різноманітні елементи в програмування ( такі як скобки і тд.тп)
+    Але, в данному випадку, з текстом працюють адміністратори сайту.*@
+
+<div>
+    @Html.Raw(Model.Text)
+</div>
