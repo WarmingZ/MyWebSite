@@ -20,8 +20,8 @@ namespace MyWebSite.Service
         }
 
         /// <summary>
-        /// Для контролллера перевіряємо його атрибути, якщо присутній ареа атрибут
-        /// то додаємо  фільтир для даного контроллера Authorize фільтр
+        /// For the controller we check its attributes, if the area attribute is present
+        /// then add a filter for this controller Authorize filter
         /// </summary>
         /// <param name="controller"></param>
         public void Apply(ControllerModel controller)

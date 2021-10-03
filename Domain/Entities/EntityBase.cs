@@ -6,7 +6,7 @@ namespace MyWebSite.Domain.Entities
 {
     public abstract class EntityBase
     {
-        protected EntityBase() => DateAdded = DateTime.UtcNow; // при створенні кожного об'єкта дата створення буде дорівнювати UtcNow
+        protected EntityBase() => DateAdded = DateTime.UtcNow; // when creating each object, the creation date will be equal to UtcNow
 
         [Required]
         public Guid Id { get; set; }

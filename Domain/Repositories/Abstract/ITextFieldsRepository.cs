@@ -7,10 +7,10 @@ namespace MyWebSite.Domain.Repositories.Abstract
 {
    public  interface ITextFieldsRepository
     {
-        IQueryable<TextField> GetTextFields(); //Вибірка всіх текстових полів
-        TextField GetTextFieldById(Guid id); //Вибір текстового поля по ід
-        TextField GetTextFieldByCodeWord(string codeWord); //По кодовому слову
-        void SaveTextField(TextField entity); //Зберегти зміни
-        void DeleteTextField(Guid id); //Видалити текстове поле
+        IQueryable<TextField> GetTextFields(); // Sample all text fields
+        TextField GetTextFieldById(Guid id); // Select a text field by id
+        TextField GetTextFieldByCodeWord(string codeWord); // According to the code word
+        void SaveTextField(TextField entity); // Save changes
+        void DeleteTextField(Guid id); // Delete text field
     }
 }

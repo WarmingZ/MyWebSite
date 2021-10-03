@@ -25,7 +25,7 @@ namespace MyWebSite
             Configuration.Bind("Project", new Config());
 
             //Add functions application 
-            //Для прикладу, якщо потрібно змінити ОРМ систему, варто лише замінити дані параметри тут.
+            //For example, if you need to change the ORM system, you only need to replace these parameters here.
             services.AddTransient<ITextFieldsRepository, EFTextFieldsRepository>();
             services.AddTransient<IServiceItemsRepository, EFServiceItemsRepository>();
             services.AddTransient<DataManager>();
@@ -33,7 +33,7 @@ namespace MyWebSite
             //Add context Db
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Config.ConnectionString));
 
-            //Settings identity system 
+            //Gonfiguring identity system 
             services.AddIdentity<IdentityUser, IdentityRole>(opts =>
             {
                 opts.User.RequireUniqueEmail = true;
@@ -70,15 +70,15 @@ namespace MyWebSite
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //Порядок реєстрації meddleware важливий!
+            // The procedure for registering meddleware is important!
 
-            // Якщо  знаходимось в розробці то цей пункт допомагає відображати помилки розробнику в браузері
+            // If we are in development then this item helps to display errors to the developer in the browser
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            // підключаю підтримку статичних файлів в проекті ( css, js ...)
+            //Connect support of static files in the project(css, js...)
             app.UseStaticFiles();
 
             //Add system routing 
@@ -89,7 +89,7 @@ namespace MyWebSite
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // реєструю потрібні нам маршрути ( ендпоінти ) 
+            // register the routes we need (endpoints)
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
